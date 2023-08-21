@@ -34,6 +34,10 @@ public class DataPemilihActivity extends AppCompatActivity {
     public static final String TAG_TANGGAL = "tanggal";
     public static final String TAG_ALAMAT = "alamat";
 
+    public static final String TAG_GAMBAR = "gambar";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,7 @@ public class DataPemilihActivity extends AppCompatActivity {
                 final String jenis_kelamin = itemList.get(position).getJenis_kelamin();
                 final String tanggal = itemList.get(position).getTanggal();
                 final String alamat = itemList.get(position).getAlamat();
+                final byte[] gambar = itemList.get(position).getGambar();
 
                 final CharSequence[] dialogitem = {"Edit", "Delete"};
                 dialog = new AlertDialog.Builder(DataPemilihActivity.this);
@@ -77,6 +82,7 @@ public class DataPemilihActivity extends AppCompatActivity {
                                 intent.putExtra(TAG_JENIS_KELAMIN, jenis_kelamin);
                                 intent.putExtra(TAG_TANGGAL, tanggal);
                                 intent.putExtra(TAG_ALAMAT, alamat);
+                                intent.putExtra(TAG_GAMBAR, gambar);
                                 startActivity(intent);
                                 break;
                             case 1:
@@ -111,16 +117,16 @@ public class DataPemilihActivity extends AppCompatActivity {
 
     }
     private void getAllData() {
-        ArrayList<HashMap<String, String>> row = SQLite.getAllData();
+        ArrayList<HashMap<String, Object>> row = SQLite.getAllData();
         for (int i = 0; i < row.size(); i++) {
-            String id = row.get(i).get(TAG_ID);
-            String nik = row.get(i).get(TAG_NIK);
-            String nama = row.get(i).get(TAG_NAMA);
-            String no_hp = row.get(i).get(TAG_NO_HP);
-            String jenis_kelamin = row.get(i).get(TAG_JENIS_KELAMIN);
-            String tanggal = row.get(i).get(TAG_TANGGAL);
-            String alamat = row.get(i).get(TAG_ALAMAT);
-
+            String id = String.valueOf(row.get(i).get(TAG_ID));
+            String nik = String.valueOf(row.get(i).get(TAG_NIK));
+            String nama = String.valueOf(row.get(i).get(TAG_NAMA));
+            String no_hp = String.valueOf(row.get(i).get(TAG_NO_HP));
+            String jenis_kelamin = String.valueOf(row.get(i).get(TAG_JENIS_KELAMIN));
+            String tanggal = String.valueOf(row.get(i).get(TAG_TANGGAL));
+            String alamat = String.valueOf(row.get(i).get(TAG_ALAMAT));
+            byte[] gambar = (byte[]) row.get(i).get(TAG_GAMBAR);
 
             Data data = new Data();
             data.setId(id);
@@ -130,11 +136,15 @@ public class DataPemilihActivity extends AppCompatActivity {
             data.setJenis_kelamin(jenis_kelamin);
             data.setTanggal(tanggal);
             data.setAlamat(alamat);
+            data.setGambar(gambar);
 
             itemList.add(data);
         }
         adapter.notifyDataSetChanged();
     }
+
+
+
 
     @Override
     protected void onResume() {

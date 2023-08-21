@@ -2,11 +2,12 @@ package org.d3if3127.sertifikasiaplikasikpu.model;
 
 public class Data {
     private String id, nik, nama,no_hp, jenis_kelamin,tanggal,alamat;
+    private byte[] gambar;
 
 
     public Data() {
     }
-    public Data(String id, String nik, String nama,String no_hp, String jenis_kelamin, String tanggal, String alamat) {
+    public Data(String id, String nik, String nama,String no_hp, String jenis_kelamin, String tanggal, String alamat, byte[] gambar) {
         this.id = id;
         this.nik = nik;
         this.nama = nama;
@@ -14,6 +15,7 @@ public class Data {
         this.jenis_kelamin = jenis_kelamin;
         this.tanggal = tanggal;
         this.alamat = alamat;
+        this.gambar = gambar;
 
     }
     public String getId() {
@@ -59,5 +61,11 @@ public class Data {
         this.alamat= alamat;
     }
 
+    public byte[] getGambar() {
+        return gambar;
+    }
 
+    public void setGambar(byte[] gambar) {
+        this.gambar = gambar;
+    }
 }

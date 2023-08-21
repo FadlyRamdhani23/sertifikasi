@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import org.d3if3127.sertifikasiaplikasikpu.R;
@@ -56,6 +57,7 @@ public class Adapter extends BaseAdapter {
         TextView jenis_kelamin = (TextView) convertView.findViewById(R.id.jkList);
         TextView tanggal = (TextView) convertView.findViewById(R.id.tanggalList);
         TextView alamat = (TextView) convertView.findViewById(R.id.alamatList);
+        ImageView gambar = (ImageView) convertView.findViewById(R.id.gambarLis);
 
         Data data = items.get(position);
 
@@ -66,6 +68,7 @@ public class Adapter extends BaseAdapter {
         jenis_kelamin.setText("JENIS KELAMIN : " +data.getJenis_kelamin());
         tanggal.setText("TANGGAL : " +data.getTanggal());
         alamat.setText("ALAMAT : " + data.getAlamat());
+        Glide.with(activity).load(data.getGambar()).into(gambar);
 
         return convertView;
     }

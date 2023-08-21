@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import org.d3if3127.sertifikasiaplikasikpu.adapter.Adapter;
 import org.d3if3127.sertifikasiaplikasikpu.helper.DbHelper;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Adapter adapter;
 
     AlertDialog.Builder dialog;
-    Button btnForm, btnDataPemilih, btnInformasi, btnKeluar;
+    ImageView btnForm, btnDataPemilih, btnInformasi, btnKeluar;
 
 
     @Override

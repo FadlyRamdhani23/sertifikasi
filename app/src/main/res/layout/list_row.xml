@@ -71,12 +71,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />
-<!--    <ImageView-->
-<!--        android:id="@+id/gambarList"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:src="@drawable/ic_launcher_background"-->
-<!--        android:layout_gravity="center_vertical"-->
-<!--        android:scaleType="centerCrop" />-->
+    <ImageView
+        android:id="@+id/gambarLis"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop" />
 
 </LinearLayout>

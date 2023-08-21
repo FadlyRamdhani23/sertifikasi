@@ -9,4 +9,7 @@
     <string name="tanggal">TANGGAL</string>
     <string name="alamat">ALAMAT</string>
     <string name="nik">NIK              :</string>
+    <string name="pengertian">
+       Aplikasi KPU adalah aplikasi yang digunakan untuk petugas laoangan dalam mendata keluarga yang memiliki hak pilih. dan KPU merupakan lembaga yang mengatur dan mengawasi jalannya pemilu di Indonesia.
+    </string>
 </resources>

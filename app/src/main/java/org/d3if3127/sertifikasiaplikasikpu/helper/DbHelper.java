@@ -64,9 +64,9 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ArrayList<HashMap<String, String>> getAllData() {
-        ArrayList<HashMap<String, String>> wordList;
-        wordList = new ArrayList<HashMap<String, String>>();
+    public ArrayList<HashMap<String, Object>> getAllData() {
+        ArrayList<HashMap<String, Object>> wordList;
+        wordList = new ArrayList<HashMap<String, Object>>();
         String selectQuery = "SELECT * FROM " + TABLE_SQLite;
         SQLiteDatabase database = this.getWritableDatabase();
         Cursor cursor = database.rawQuery(selectQuery, null);
@@ -94,8 +94,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public void insert(String nik, String nama, String no_hp, String jenis_kelamin, String tanggal, String alamat, byte[] gambar) {
         SQLiteDatabase database = this.getWritableDatabase();
-        String queryValues = "INSERT INTO " + TABLE_SQLite + " (nama, nik, no_hp, jenis_kelamin, tanggal, alamat) " +
-                "VALUES ('" + nama + "', '" + nik + "', '" + no_hp + "', '" + jenis_kelamin + "', '" + tanggal + "', '" + alamat + "',?)";
+        String queryValues = "INSERT INTO " + TABLE_SQLite + " (nama, nik, no_hp, jenis_kelamin, tanggal, alamat, gambar) " +
+                "VALUES ('" + nama + "', '" + nik + "', '" + no_hp + "', '" + jenis_kelamin + "', '" + tanggal + "', '" + alamat + "', ?)";
 
         Log.e("insert sqlite ", "" + queryValues);
         database.execSQL(queryValues, new Object[]{gambar});
@@ -111,7 +111,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 + COLUMN_NO_HP + "='" + no_hp + "', "
                 + COLUMN_JENIS_KELAMIN + "='" + jenis_kelamin + "', "
                 + COLUMN_TANGGAL + "='" + tanggal + "', "
-                + COLUMN_ALAMAT + "='" + alamat + "'"
+                + COLUMN_ALAMAT + "='" + alamat + "',"
                 + COLUMN_AVATAR + "= ?"
                 + " WHERE " + COLUMN_ID + "=" + "'" + id + "'";
         Log.e("update sqlite ", updateQuery);
