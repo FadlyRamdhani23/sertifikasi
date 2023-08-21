@@ -42,7 +42,7 @@ public class InputData extends AppCompatActivity implements DatePickerDialog.OnD
     private static final int PICK_IMAGE_REQUEST = 1;
     DbHelper SQLite = new DbHelper(this);
     TextInputEditText text_id, text_nik, text_nama, text_no_hp, text_tanggal, text_alamat;
-    Button btn_submit;
+    Button btn_submit, btn_lokasi;
     RadioButton radio_laki, radio_perempuan;
     ImageView imageView, gambarList;
     byte[] gambar;
@@ -69,6 +69,7 @@ public class InputData extends AppCompatActivity implements DatePickerDialog.OnD
         imageView = (ImageView) findViewById(R.id.imageView2);
         gambarList = (ImageView) findViewById(R.id.iamgeView3);
         btn_submit = (Button) findViewById(R.id.submit_btn);
+        btn_lokasi = (Button) findViewById(R.id.btn_ceklokasi);
 
 
         // Mendapatkan data yang mungkin dikirim dari activity sebelumnya
@@ -81,6 +82,10 @@ public class InputData extends AppCompatActivity implements DatePickerDialog.OnD
         alamat = getIntent().getStringExtra(DataPemilihActivity.TAG_ALAMAT);
         gambar = getIntent().getByteArrayExtra(DataPemilihActivity.TAG_GAMBAR);
 
+        btn_lokasi.setOnClickListener(v -> {
+            Intent intent = new Intent(InputData.this, LokasiActivity.class);
+            startActivity(intent);
+        });
         // pemilihan gambar
         gambarList.setOnClickListener(v ->{
             // Buat dialog untuk memilih sumber gambar (kamera atau galeri)
@@ -193,7 +198,7 @@ public class InputData extends AppCompatActivity implements DatePickerDialog.OnD
         radio_perempuan.setChecked(false);
         text_tanggal.setText(null);
         text_alamat.setText(null);
-        gambarList.setImageResource(R.drawable.ic_launcher_background);
+        gambarList.setImageResource(R.drawable.baseline_image_24);
     }
 
     //metode untuk menyimpan data

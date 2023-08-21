@@ -51,23 +51,23 @@ public class Adapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_row, null);
 
         TextView id = (TextView) convertView.findViewById(R.id.id);
-        TextView nik = (TextView) convertView.findViewById(R.id.nikList);
-        TextView nama = (TextView) convertView.findViewById(R.id.namaList);
-        TextView no_hp = (TextView) convertView.findViewById(R.id.noHandphoneList);
-        TextView jenis_kelamin = (TextView) convertView.findViewById(R.id.jkList);
-        TextView tanggal = (TextView) convertView.findViewById(R.id.tanggalList);
-        TextView alamat = (TextView) convertView.findViewById(R.id.alamatList);
-        ImageView gambar = (ImageView) convertView.findViewById(R.id.gambarLis);
+        TextView nik = (TextView) convertView.findViewById(R.id.nikList2);
+        TextView nama = (TextView) convertView.findViewById(R.id.namaList2);
+        TextView no_hp = (TextView) convertView.findViewById(R.id.noHandphoneList2);
+        TextView jenis_kelamin = (TextView) convertView.findViewById(R.id.jkList2);
+        TextView tanggal = (TextView) convertView.findViewById(R.id.tanggalList2);
+        TextView alamat = (TextView) convertView.findViewById(R.id.alamatList2);
+        ImageView gambar = (ImageView) convertView.findViewById(R.id.gambarList);
 
         Data data = items.get(position);
 
         id.setText(data.getId());
-        nik.setText("NIK : " + data.getNik());
-        nama.setText("NAMA : " + data.getNama());
-        no_hp.setText("NO TELEPON : " + data.getNo_hp());
-        jenis_kelamin.setText("JENIS KELAMIN : " +data.getJenis_kelamin());
-        tanggal.setText("TANGGAL : " +data.getTanggal());
-        alamat.setText("ALAMAT : " + data.getAlamat());
+        nik.setText(data.getNik());
+        nama.setText(data.getNama());
+        no_hp.setText(data.getNo_hp());
+        jenis_kelamin.setText(data.getJenis_kelamin());
+        tanggal.setText(data.getTanggal());
+        alamat.setText( data.getAlamat());
         Glide.with(activity).load(data.getGambar()).into(gambar);
 
         return convertView;
