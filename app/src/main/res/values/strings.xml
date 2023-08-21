@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">sertifikasi aplikasi KPU</string>
+    <string name="NIK">NIK</string>
+    <string name="NAMA">NAMA</string>
+    <string name="NOHP">NO.HP</string>
+    <string name="jenis_kelamin">JENIS KELAMIN</string>
+    <string name="pria">Pria</string>
+    <string name="wanita">Wanita</string>
+    <string name="tanggal">TANGGAL</string>
+    <string name="alamat">ALAMAT</string>
+    <string name="nik">NIK              :</string>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/nikList"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:text="NIK                           :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/namaList"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="NAMA                     :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/noHandphoneList"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:text="NO HANDPHONE  :"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/jkList"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:text="JENIS KELAMIN    :"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tanggalList"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:text="TANGGAL               :"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/alamatList"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:text="ALAMAT                 :"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+<!--    <ImageView-->
+<!--        android:id="@+id/gambarList"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:src="@drawable/ic_launcher_background"-->
+<!--        android:layout_gravity="center_vertical"-->
+<!--        android:scaleType="centerCrop" />-->
+
+</LinearLayout>
